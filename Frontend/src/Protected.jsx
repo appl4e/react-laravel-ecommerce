@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React from 'react'
 import { useEffect } from 'react';
 import { useHistory } from 'react-router';
 
@@ -9,7 +9,7 @@ export const Protected = ({Comp}) => {
     if(!localStorage.getItem('user-info')){
       history.push('/register');
     }
-  }, [])
+  })
 
   return (
     <div>

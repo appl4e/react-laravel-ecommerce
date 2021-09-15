@@ -14,11 +14,9 @@ function Register() {
     if(localStorage.getItem('user-info')){
       history.push('/add');
     }
-  }, [])
+  })
   
   async function signUp(){
-
-    console.log(item);
     
     let result = await fetch("http://localhost:8000/api/register", {
       method: 'POST',

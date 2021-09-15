@@ -9,7 +9,7 @@ function Header() {
   
   function logOut(){
     localStorage.clear();
-    history.push('/register');
+    history.push('/login');
   }
 
   return (
@@ -31,11 +31,20 @@ function Header() {
               </>
           }
         </Nav>
-        <Nav>
-          <NavDropdown title={userInfo && userInfo.name} id="basic-nav-dropdown">
-            <NavDropdown.Item onClick={logOut}>Logout</NavDropdown.Item>
-          </NavDropdown>
-        </Nav>
+        {
+          userInfo?
+            <>
+              <Nav>
+                <NavDropdown title={userInfo && userInfo.name} id="basic-nav-dropdown">
+                  <NavDropdown.Item onClick={logOut}>Logout</NavDropdown.Item>
+                </NavDropdown>
+              </Nav>
+            </>
+            :
+            <>
+            </>
+        }
+        
       </Container>
     </Navbar>
     </div>

@@ -1,18 +1,22 @@
 
-import './App.css';
+
 import {BrowserRouter, Route} from 'react-router-dom'
+import React from 'react';
 import Login from './Login'
 import Register from './Register'
 import AddProduct from './AddProduct'
 import UpdateProduct from './UpdateProduct'
 import { Protected } from './Protected';
+import { Redirect } from 'react-router';
 
 function App() {
+  
   return (
     <div className="App">
       <BrowserRouter>
         {/* <Header /> */}
-        {/* <h1>Ecomm Project</h1> */}
+        {/* <h1>Ecomm Project</h1> */}        
+        <Redirect to="/login" />
         <Route path="/login">
           <Login></Login>
         </Route>
