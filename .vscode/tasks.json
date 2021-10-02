@@ -1,0 +1,28 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"type": "npm",
+			"script": "start",
+			"path": "Frontend/",
+			"problemMatcher": [],
+			"label": "npm: start - Frontend",
+			"detail": "react-scripts start",
+			"group": {
+				"kind": "build",
+				"isDefault": false
+			}
+		},
+		{
+			"label": "laravel serve",
+			"type": "shell",
+			"command": "php artisan serve",
+			"options": { "cwd": "${cwd}/Backend/" },
+			"group": {
+				"kind": "build",
+				"isDefault": false
+			},
+
+		}
+	]
+}

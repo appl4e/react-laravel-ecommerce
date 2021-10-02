@@ -12,7 +12,7 @@ function Login(){
 
   useEffect(()=>{
     if(userInfo){
-      history.push('/add');
+      history.push('/');
     }
   })
 
@@ -32,7 +32,7 @@ function Login(){
 
     localStorage.setItem("user-info", JSON.stringify(result));
 
-    history.push('/add');
+    history.push('/');
   }
   return(
     <div>
