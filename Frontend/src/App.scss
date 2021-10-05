@@ -1,2 +1,8 @@
 // importing bootstrap
 
+.product-image {
+	&.img-fluid {
+		width: auto;
+		height: 100px;
+	}
+}
