@@ -32,4 +32,25 @@ class ProductController extends Controller
         }
 
     }
+    
+    function singleProduct($id){
+        return Product::find($id);
+    }
+
+    function editProduct($id, Request $req){
+        $product = Product::find($id);
+        $product->name = $req->input('name');
+        $product->price = $req->input('price');
+        $product->description = $req->input('description');
+        if($req->file('fileName')){
+            $product->file_path = $req->file('fileName')->store('products');
+
+        }
+        $product->save();
+        return $product;
+    }
+
+    function searchProduct($key){
+        return Product::where('name', 'Like', "%$key%")->get();
+    }
 }

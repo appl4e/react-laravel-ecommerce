@@ -19,7 +19,7 @@ function ProductList() {
 		const result = fetch(`http://localhost:8000/api/product/delete/${id}`, {
 			method: "DELETE",
 		});
-		const updatedList = data.filter((d) => d.id != id);
+		const updatedList = data.filter((d) => d.id !== id);
 		console.log(updatedList);
 		setData(updatedList);
 	};
@@ -55,8 +55,11 @@ function ProductList() {
 										<img src={"http://localhost:8000/" + item.file_path} alt="" className="img-fluid product-image" />
 									</td>
 									<td>
-										<Button variant="danger" onClick={() => deleteProduct(item.id)}>
+										<Button variant="danger" onClick={() => deleteProduct(item.id)} size="sm">
 											Delete
+										</Button>
+										<Button href={"/update/" + item.id} variant="success" size="sm" className="ml-2">
+											Edit
 										</Button>
 									</td>
 								</tr>

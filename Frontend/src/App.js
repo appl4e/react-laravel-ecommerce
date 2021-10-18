@@ -25,7 +25,7 @@ function App() {
 						{/* <AddProduct></AddProduct> */}
 						<Protected Comp={AddProduct} />
 					</Route>
-					<Route path="/update">
+					<Route path="/update/:id">
 						{/* <UpdateProduct></UpdateProduct> */}
 						<Protected Comp={UpdateProduct} />
 					</Route>

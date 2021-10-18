@@ -20,7 +20,6 @@ function AddProduct() {
 			method: "POST",
 			body: formData,
 		});
-
 		if (result.ok) {
 			setProdAdded(true);
 			setTimeout(() => {
