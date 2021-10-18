@@ -16,11 +16,10 @@ function ProductList() {
 	};
 
 	const deleteProduct = (id) => {
-		const result = fetch(`http://localhost:8000/api/product/delete/${id}`, {
+		fetch(`http://localhost:8000/api/product/delete/${id}`, {
 			method: "DELETE",
 		});
 		const updatedList = data.filter((d) => d.id !== id);
-		console.log(updatedList);
 		setData(updatedList);
 	};
 	return (

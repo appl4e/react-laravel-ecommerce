@@ -11,15 +11,18 @@ function UpdateProduct({ match }) {
 	const [price, setPrice] = useState("");
 	const [description, setDescription] = useState("");
 	const [file, setFile] = useState("");
-	useEffect(async () => {
-		let result = await fetch(`http://localhost:8000/api/product/${id}`);
-		result = await result.json();
-		setData(result);
-		setName(result.name);
-		setPrice(result.price);
-		setDescription(result.description);
-		setFile(result.file_path);
-	}, []);
+	useEffect(() => {
+		async function fetchData() {
+			let result = await fetch(`http://localhost:8000/api/product/${id}`);
+			result = await result.json();
+			setData(result);
+			setName(result.name);
+			setPrice(result.price);
+			setDescription(result.description);
+			setFile(result.file_path);
+		}
+		fetchData();
+	}, [id]);
 	async function updateProduct(id) {
 		const formData = new FormData();
 		formData.append("name", name);

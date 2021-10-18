@@ -20,6 +20,9 @@ function Header() {
 					<Nav className="ml-auto">
 						{userInfo ? (
 							<>
+								<Nav.Link as={Link} to="/search">
+									Search
+								</Nav.Link>
 								<Nav.Link as={Link} to="/">
 									Products
 								</Nav.Link>

@@ -6,6 +6,7 @@ import AddProduct from "./AddProduct";
 import UpdateProduct from "./UpdateProduct";
 import { Protected } from "./Protected";
 import ProductList from "./ProductList";
+import SearchProduct from "./SearchProduct";
 import "./App.scss";
 
 function App() {
@@ -28,6 +29,10 @@ function App() {
 					<Route path="/update/:id">
 						{/* <UpdateProduct></UpdateProduct> */}
 						<Protected Comp={UpdateProduct} />
+					</Route>
+					<Route path="/search">
+						{/* <UpdateProduct></UpdateProduct> */}
+						<Protected Comp={SearchProduct} />
 					</Route>
 					<Route path="/">
 						<Protected Comp={ProductList} />
