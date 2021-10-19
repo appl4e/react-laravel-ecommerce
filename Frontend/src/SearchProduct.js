@@ -6,9 +6,7 @@ function SearchProduct() {
 	const [data, setData] = useState([]);
 
 	async function searchProd(key) {
-		let result = await fetch(`http://localhost:8000/api/product/search/${key}`, {
-			method: "GET",
-		});
+		let result = await fetch(`http://localhost:8000/api/product/search/${key}`);
 		result = await result.json();
 		setData(result);
 	}
